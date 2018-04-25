@@ -83,7 +83,6 @@ class EB_ifort(EB_icc, IntelBase):
         """
         guesses = super(EB_ifort, self).make_module_req_guess()
         if LooseVersion(self.version) >= LooseVersion('2016'):
-            # This enables the creation of fortran 2008 bindings in MPI
             guesses['CPATH'].append('include')
 
         return guesses
